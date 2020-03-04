@@ -1,11 +1,8 @@
 {
   "name": "graphql-mongo-api",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "",
   "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/benedictpmateo/graphql-mongo-api.git"
@@ -15,5 +12,34 @@
   "bugs": {
     "url": "https://github.com/benedictpmateo/graphql-mongo-api/issues"
   },
-  "homepage": "https://github.com/benedictpmateo/graphql-mongo-api#readme"
+  "homepage": "https://github.com/benedictpmateo/graphql-mongo-api#readme",
+  "dependencies": {
+    "@babel/node": "^7.8.4",
+    "apollo-server": "^2.11.0",
+    "apollo-server-express": "^2.11.0",
+    "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "dotenv": "^8.2.0",
+    "express": "~4.16.1",
+    "graphql": "^14.6.0",
+    "graphql-tools": "^4.0.7",
+    "mongoose": "^5.9.3",
+    "morgan": "~1.9.1",
+    "rimraf": "^3.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "nodemon": "^2.0.2"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
+  "scripts": {
+    "start": "babel-node -- ./bin/www",
+    "dev": "nodemon --inspect --exec babel-node -- ./bin/www"
+  }
 }
