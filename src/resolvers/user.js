@@ -1,32 +1,17 @@
-const lists = [
-  { id: 1, name: 'Benedict Mateo' },
-  { id: 2, name: 'John Doe' },
-  { id: 3, name: 'Jane Doe' },
-]
+import { user } from "../models";
 
-export const Query = {
-  users: (user, args) => {
-    return lists
+const Query = {
+  users: (parent, args) => {
+    return user.find();
   },
-  user: (user, args) => {
-    return lists.find((list) => list.id === args.id)
+  user: (parent, args) => {
+    return user.findById(args.id);
   }
-}
+};
 
-export const Mutation = {
-  addUser: (user, args) => {
-    lists.push(args)
-    return args
-  },
-  removeUser: (user, args) => {
-    return {
-      type: "success",
-      message: "Successfully removed"
-    }
-  }
-}
+const Mutation = {};
 
 export default {
   Query,
   Mutation
-}
+};
